@@ -1,0 +1,40 @@
+{% extends "page.html" %}
+
+{% block content %}
+<section class="container imprint">
+    <p class="title mt-4">{{ page.title }}</p>
+    <div class="box">
+        <p class="title is-4">Weber Douglas Development we-do.dev</p>
+        <p>Douglas Weber</p>
+        <p>Blumenstr. 10</p>
+        <p>76337 Waldbronn</p>
+        <span class="icon-text">
+            <span class="icon">
+                <i class="fas fa-phone"></i>
+            </span>
+            <span>01234567</span>
+        </span></br>
+        <span class="icon-text">
+            <span class="icon">
+                <i class="fas fa-envelope"></i>
+            </span>
+            <span><a href="mailto:{{config.extra.email}}">{{config.extra.email}}</a></span>
+        </span></br>
+        {{ page.extra.vat_id }}: 111222333
+    </div>
+
+    <div class="box">
+        <p class="title is-4">{{ page.extra.insu_label }}</p>
+        <p>HISCOX SA</p>
+        <p>Arnulfstraße 31</p>
+        <p>{{ page.extra.insu_address }}</p>
+        <p>{{ page.extra.insu_policy_terretory }}</p>
+    </div>
+
+    {%- if page.content %}
+    <div class="content mt-4">
+        {{ page.content | safe }}
+    </div>
+    {% endif %}
+</section>
+{% endblock %}

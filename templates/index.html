@@ -8,9 +8,210 @@
     {#- Enable responsiveness on mobile devices
     viewport-fit=cover is to support iPhone X rounded corners and notch in landscape #}
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
+    <title>{% block title %}{{ config.title ~ " | " ~ section.title }}{% endblock title %}</title>
+
+    {#- All the icons #}
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ get_url(path=`/icons/apple-touch-icon.png`) }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ get_url(path=`/icons/favicon-32x32.png`) }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ get_url(path=`/icons/favicon-16x16.png`) }}">
+    <link rel="manifest" href="{{ get_url(path=`/icons/site.webmanifest`) }}">
+    <link rel="mask-icon" href="{{ get_url(path=`/icons/safari-pinned-tab.svg`) }}" color="#3a52bd">
+    <link rel="shortcut icon" href="{{ get_url(path=`/icons/favicon.ico`) }}">
+    <meta name="msapplication-TileColor" content="#3a52bd">
+    <meta name="msapplication-config" content="{{ get_url(path=`/icons/browserconfig.xml`) }}">
+    <meta name="theme-color" content="#3a52bd">
+
+    {#- CSS #}
+    <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.3/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ get_url(path=`style.css`) }}">
+    {%- block extra_head %}
+    {%- endblock extra_head %}
 </head>
 
 <body class="has-navbar-fixed-top">
+    <!-- Navigation bar -->
+    <nav class="navbar is-link is-fixed-top">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item is-size-5 has-text-weight-bold" href="{{config.base_url}}">
+                    <img src="{{ get_url(path=`wedodev_logo.svg`) }}">
+                </a>
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+
+            <div id="navbarMenu" class="navbar-menu">
+                <div class="navbar-end has-text-centered">
+                    <a class="navbar-item" href="#{{ trans(key='skills', lang=lang) | lower }}">
+                        <span>{{ trans(key="skills", lang=lang) }}</span>
+                    </a>
+                    <a class="navbar-item" href="#{{ trans(key='contact', lang=lang) | lower}}">
+                        <span>{{ trans(key="contact", lang=lang) }}</span>
+                    </a>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link">
+                            {{- trans(key="language", lang=lang) -}}
+                        </a>
+
+                        <div class="navbar-dropdown">
+                            {% if section %}
+                            {% set translations = section.translations %}
+                            {% else %}
+                            {% set translations = page.translations %}
+                            {% endif %}
+                            {%- for translation in translations %}
+                            <a class="navbar-item {%- if translation.lang == lang %} has-text-weight-bold {%- endif %}"
+                                href="{{ translation.permalink }}">
+                                {{- translation.lang -}}
+                            </a>
+                            {%- endfor %}
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    {%- block content %}
+    <section class="hero is-link is-fullheight is-fullheight-with-navbar">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <img src="{{ get_url(path=`wedodev_logo.svg`) }}">
+                <div class="m-4"></div>
+                <p class="title">
+                    Dougals
+                </p>
+                <p class="subtitle">
+                    Ready for <span id="typewriter"></span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    {#- Skills #}
+    <section class="section" id="{{ trans(key='skills', lang=lang) | lower }}">
+        <div class="section-heading">
+            <p class="title is-2">{{ trans(key="skills", lang=lang) }}</p>
+        </div>
+        <div class="tile is-ancestor">
+            <div class="tile is-vertical is-8">
+                <div class="tile">
+                    <div class="tile is-parent is-vertical">
+                        <article class="tile is-child notification is-primary">
+                            <p class="title">C++</p>
+                            <p class="subtitle">Top tile</p>
+                        </article>
+                        <article class="tile is-child notification is-warning">
+                            <p class="title">Python</p>
+                            <p class="subtitle">{{__tera_context}}</p>
+                        </article>
+                    </div>
+                    <div class="tile is-parent">
+                        <article class="tile is-child notification is-link">
+                            <p class="title">Middle tile</p>
+                            <p class="subtitle">With an image</p>
+                            <figure class="image is-4by3">
+                                <img src="https://bulma.io/images/placeholders/640x480.png">
+                            </figure>
+                        </article>
+                    </div>
+                </div>
+            </div>
+            <div class="tile is-parent">
+                <article class="tile is-child notification is-success">
+                    <div class="content">
+                        <p class="title">Rust</p>
+                        <p class="subtitle">With even more content</p>
+                        <div class="content">
+                            <!-- Content -->
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    {#- Contact #}
+    <section class="section" id="{{ trans(key='contact', lang=lang) | lower}}">
+        <div class="container">
+            <div class="section-heading">
+                <p class="title is-2">{{ trans(key='contact', lang=lang) }}</p>
+                <p class="subtitle is-5">Get in touch</p>
+            </div>
+            <br>
+
+            <div class="columns">
+                <div class="column is-6 is-offset-3">
+                    <div class="box">
+                        <div class="field">
+                            <label class="label">Name</label>
+                            <div class="control">
+                                <input class="input" type="text" placeholder="Text input">
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label class="label">Email</label>
+                            <div class="control has-icons-left">
+                                <input class="input" type="email" placeholder="Email input" value="">
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-envelope"></i>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label class="label">Message</label>
+                            <div class="control">
+                                <textarea class="textarea" placeholder="Textarea"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="field is-grouped has-text-centered">
+                            <div class="control">
+                                <button class="button is-link is-large"><span class="icon">
+                                        <i class="fas fa-envelope"></i>
+                                    </span>
+                                    <span>Submit</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    {%- endblock content %}
+
+    <footer class="footer has-text-centered">
+        <div>
+            © {{now() | date(format="%Y")}} Weber Douglas Development
+            <span class="mx-2">|</span>
+            <a href="{{get_url(path='@/imprint.md', lang=lang)}}">
+                {{- trans(key="imprint", lang=lang) -}}
+            </a>
+        </div>
+    </footer>
+
+    {#- Scripts #}
+    <script src="{{ get_url(path='site.js') }}"></script>
+    {%- block scripts %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/TypewriterJS/2.13.1/core.min.js"></script>
+    <script>
+        new Typewriter('#typewriter', {
+            strings: ['the next job', 'awesome work', 'going beyond'],
+            autoStart: true,
+            loop: true,
+        });
+    </script>
+    {%- endblock scripts %}
+
 </body>
 
 </html>

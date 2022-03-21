@@ -11,3 +11,26 @@ build_search_index = false
 # Whether to do syntax highlighting
 # Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
 highlight_code = false
+
+default_language = "en"
+
+[languages.en]
+title = "we-do.dev"
+
+[languages.en.translations]
+language = "Language"
+imprint = "Imprint"
+skills = "Skills"
+contact = "Contact"
+
+[languages.de]
+title = "we-do.dev"
+
+[languages.de.translations]
+language = "Sprache"
+imprint = "Impressum"
+skills = "Qualifikation"
+contact = "Kontakt"
+
+[extra]
+email = "imprint@we-do.dev"
