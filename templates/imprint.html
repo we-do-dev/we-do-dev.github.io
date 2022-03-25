@@ -1,5 +1,9 @@
 {% extends "page.html" %}
 
+{% block navbar %}
+{{- macros::navbar(extra_items=config.extra.imprint_navbar_items) }}
+{% endblock navbar %}
+
 {% block content %}
 <section class="container imprint">
     <p class="title mt-4">{{ page.title }}</p>
