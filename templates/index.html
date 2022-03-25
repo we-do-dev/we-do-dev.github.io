@@ -35,7 +35,7 @@
     <nav class="navbar is-link is-fixed-top">
         <div class="container">
             <div class="navbar-brand">
-                <a class="navbar-item is-size-5 has-text-weight-bold" href="{{ config.base_url | safe}}">
+                <a class="navbar-item" href="{{ config.base_url | safe}}">
                     <img src="{{ get_url(path=`wedodev_logo.svg`) }}">
                 </a>
                 <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
@@ -46,7 +46,7 @@
             </div>
 
             <div id="navbarMenu" class="navbar-menu">
-                <div class="navbar-end has-text-centered">
+                <div class="navbar-end">
                     <a class="navbar-item" href="#{{ trans(key='skills', lang=lang) | lower }}">
                         <span>{{ trans(key="skills", lang=lang) }}</span>
                     </a>

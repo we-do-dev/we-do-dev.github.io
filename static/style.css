@@ -3,3 +3,7 @@
   margin-top: 1em;
   margin-bottom: 6em;
 }
+
+.navbar-item img {
+  max-height: 2.2rem;
+}
