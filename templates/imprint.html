@@ -5,10 +5,10 @@
 {% endblock navbar %}
 
 {% block content %}
-<section class="container imprint">
+<div class="container imprint">
     <p class="title mt-4">{{ page.title }}</p>
     <div class="box">
-        <p class="title is-4">Weber Douglas Development we-do.dev</p>
+        <p class="title is-4">Weber Douglas Development</p>
         <p>Douglas Weber</p>
         <p>Blumenstr. 10</p>
         <p>76337 Waldbronn</p>
@@ -40,5 +40,5 @@
         {{ page.content | safe }}
     </div>
     {% endif %}
-</section>
+</div>
 {% endblock %}
