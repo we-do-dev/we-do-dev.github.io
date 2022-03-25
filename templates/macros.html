@@ -1,0 +1,44 @@
+{% macro navbar(extra_items) %}
+<nav class="navbar is-link is-fixed-top">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="{{ config.base_url | safe}}">
+                <img src="{{ get_url(path=`wedodev_logo.svg`) }}">
+            </a>
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarMenu" class="navbar-menu">
+            <div class="navbar-end">
+                {%- for item in extra_items %}
+                <a class="navbar-item" href="{{item.permalink}}">
+                    <span>{{ item.title }}</span>
+                </a>
+                {%- endfor %}
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                        {{- trans(key="language", lang=lang) -}}
+                    </a>
+                    <div class="navbar-dropdown">
+                        {%- if section %}
+                        {%- set translations = section.translations %}
+                        {%- else %}
+                        {%- set translations = page.translations %}
+                        {%- endif %}
+                        {%- for translation in translations %}
+                        <a class="navbar-item {%- if translation.lang == lang %} has-text-weight-bold {%- endif %}"
+                            href="{{ translation.permalink | safe }}">
+                            {{- translation.lang -}}
+                        </a>
+                        {%- endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+{% endmacro navbar %}

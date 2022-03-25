@@ -4,5 +4,10 @@
 {{ config.title ~ " | " ~ page.title }}
 {%- endblock %}
 
-{% block scripts %}
-{% endblock scripts %}
+
+{%- block body -%}
+    {{- macros::navbar(extra_items=[]) }}
+
+    {%- block content %}
+    {%- endblock content %}
+{%- endblock body -%}

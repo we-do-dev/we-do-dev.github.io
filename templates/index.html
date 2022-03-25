@@ -1,3 +1,4 @@
+{% import "macros.html" as macros %}
 <!DOCTYPE html>
 <html lang={{lang}}>
 
@@ -31,51 +32,8 @@
 </head>
 
 <body class="has-navbar-fixed-top">
-    <!-- Navigation bar -->
-    <nav class="navbar is-link is-fixed-top">
-        <div class="container">
-            <div class="navbar-brand">
-                <a class="navbar-item" href="{{ config.base_url | safe}}">
-                    <img src="{{ get_url(path=`wedodev_logo.svg`) }}">
-                </a>
-                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                </a>
-            </div>
-
-            <div id="navbarMenu" class="navbar-menu">
-                <div class="navbar-end">
-                    <a class="navbar-item" href="#{{ trans(key='skills', lang=lang) | lower }}">
-                        <span>{{ trans(key="skills", lang=lang) }}</span>
-                    </a>
-                    <a class="navbar-item" href="#{{ trans(key='contact', lang=lang) | lower}}">
-                        <span>{{ trans(key="contact", lang=lang) }}</span>
-                    </a>
-                    <div class="navbar-item has-dropdown is-hoverable">
-                        <a class="navbar-link">
-                            {{- trans(key="language", lang=lang) -}}
-                        </a>
-                        <div class="navbar-dropdown">
-                            {%- if section %}
-                            {%- set translations = section.translations %}
-                            {%- else %}
-                            {%- set translations = page.translations %}
-                            {%- endif %}
-                            {%- for translation in translations %}
-                            <a class="navbar-item {%- if translation.lang == lang %} has-text-weight-bold {%- endif %}"
-                                href="{{ translation.permalink | safe }}">
-                                {{- translation.lang -}}
-                            </a>
-                            {%- endfor %}
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </nav>
+{%- block body %}
+    {{- macros::navbar(extra_items=[]) }}
 
     {%- block content %}
     <section class="hero is-link is-fullheight is-fullheight-with-navbar">
@@ -201,9 +159,6 @@
         </div>
     </footer>
 
-    {#- Scripts #}
-    <script src="{{ get_url(path='site.js') }}"></script>
-    {%- block scripts %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/TypewriterJS/2.13.1/core.min.js"></script>
     <script>
         new Typewriter('#typewriter', {
@@ -212,8 +167,9 @@
             loop: true,
         });
     </script>
-    {%- endblock scripts %}
+{%- endblock body -%}
 
+    <script src="{{ get_url(path='site.js') }}"></script>
 </body>
 
 </html>
