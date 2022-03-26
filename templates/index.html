@@ -40,8 +40,8 @@
     <section class="hero is-link is-fullheight is-fullheight-with-navbar">
         <div class="hero-body">
             <div class="container has-text-centered">
-                <img src="{{ get_url(path=`wedodev_logo.svg`) }}">
-                <p class="title mt-4">
+                <img class="my-2" src="{{ get_url(path=`wedodev_logo.svg`) }}">
+                <p class="title">
                     Weber Douglas Development
                 </p>
                 <p class="subtitle">
@@ -55,7 +55,7 @@
         </div>
     </section>
 
-    <div class="content container mt-6">
+    <div class="content container py-6 px-3">
         {{ section.content | safe }}
     </div>
 
