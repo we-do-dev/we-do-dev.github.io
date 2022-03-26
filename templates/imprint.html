@@ -12,18 +12,8 @@
         <p>Douglas Weber</p>
         <p>Blumenstr. 10</p>
         <p>76337 Waldbronn</p>
-        <span class="icon-text">
-            <span class="icon">
-                <i class="fas fa-phone"></i>
-            </span>
-            <span>01234567</span>
-        </span></br>
-        <span class="icon-text">
-            <span class="icon">
-                <i class="fas fa-envelope"></i>
-            </span>
-            <span><a href="mailto:{{config.extra.email}}">{{config.extra.email}}</a></span>
-        </span></br>
+        {% include "shortcodes/phone.html" %}</br>
+        {% include "shortcodes/mail.html" %}</br>
         {{ page.extra.vat_id }}: 111222333
     </div>
 

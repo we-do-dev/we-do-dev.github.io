@@ -30,6 +30,7 @@ imprint = "Impressum"
 
 [extra]
 email = "imprint@we-do.dev"
+phone = "01234"
 imprint_navbar_items = [
     { path = "/", title = "Home" },
 ]
