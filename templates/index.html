@@ -39,21 +39,25 @@
     {%- block content %}
     <section class="hero is-link is-fullheight is-fullheight-with-navbar">
         <div class="hero-body">
-            <div class="columns gradient mt-2">
-                <div class="column">
-                    {{- section.extra.hero_greeting -}}
-                    <p class="title">Douglas Weber</p>
-                    <p class="subtitle">
-                        {{-section.extra.hero_subtitle-}}
-                    </p>
-                    <p style="max-width:22em">
-                        {{-section.extra.hero_text-}}
-                    </p>
-                </div>
-                <div class="column is-narrow has-text-centered">
-                    <figure class="image is-128x128 is-inline-block">
-                        <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
-                    </figure>
+            <div class="container">
+                <div class="columns is-gapless">
+                    <div class="columns is-5 is-vcentered gradient">
+                        <div class="column">
+                            {{- section.extra.hero_greeting -}}
+                            <p class="title">Douglas Weber</p>
+                            <p class="subtitle">
+                                {{-section.extra.hero_subtitle-}}
+                            </p>
+                            <p style="max-width:22em">
+                                {{-section.extra.hero_text-}}
+                            </p>
+                        </div>
+                        <div class="column is-narrow">
+                            <figure class="image is-128x128 is-inline-block">
+                                <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
+                            </figure>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
