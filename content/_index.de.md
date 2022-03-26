@@ -4,6 +4,7 @@ title = "Home"
 [extra]
 hero_greeting = "Guten Tag, ich bin"
 hero_subtitle = "Freiberuflicher Softwareentwickler"
+hero_text = "Gute Programmierung ist für mich das A und O. Dazu zählen sorgfältige Konzeption, Tests, sowie Dokumentation."
 +++
 
 # Qualifikation
