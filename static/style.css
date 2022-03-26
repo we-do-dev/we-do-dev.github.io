@@ -1,3 +1,8 @@
 .navbar-item img {
   max-height: 2.2rem;
 }
+
+.hero-body .gradient{
+  border-radius: .2em;
+  background-image: linear-gradient(to right, hsl(229, 53%, 35%), hsl(229, 53%, 53%));
+}

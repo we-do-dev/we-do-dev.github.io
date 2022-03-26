@@ -2,6 +2,7 @@
 title = "Home"
 
 [extra]
+hero_greeting = "Hello, I am"
 hero_subtitle = "Freelance Software Engineer"
 +++
 
