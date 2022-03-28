@@ -94,14 +94,19 @@
 </body>
 {%- else %}
 <body>
+    {%- if section %}
+    {%- set path = "@/" ~ section.relative_path %}
+    {%- else %}
+    {%- set path = "@/" ~ page.relative_path %}
+    {%- endif %}
     <script>
         if (navigator.language || navigator.userLanguage == "de")
         {
-            window.location.replace("{{get_url(path=section.path, lang=`de`)}}");
+            window.location.replace("{{get_url(path=path, lang=`de`)}}");
         }
         else
         {
-            window.location.replace("{{get_url(path=section.path, lang=`en`)}}");
+            window.location.replace("{{get_url(path=path, lang=`en`)}}");
         }
     </script>
 </body>
