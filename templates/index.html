@@ -1,7 +1,8 @@
 {% import "macros.html" as macros %}
 <!DOCTYPE html>
-<html lang={{lang}}>
+<html {%- if lang!="fr" %} lang={{lang}} {%- endif %}>
 
+{%- if lang!="fr" %}
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -9,7 +10,9 @@
     {#- Enable responsiveness on mobile devices
     viewport-fit=cover is to support iPhone X rounded corners and notch in landscape #}
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
-    <title>{% block title %}{{ config.title ~ " | " ~ section.title }}{% endblock title %}</title>
+    {%- if lang!="fr" %}
+    <title>{% block title %}{{ config.title }}{% endblock title %}</title>
+    {%- endif %}
 
     {#- All the icons #}
     <link rel="apple-touch-icon" sizes="180x180" href="{{ get_url(path=`/icons/apple-touch-icon.png`) }}">
@@ -89,5 +92,19 @@
 
     <script src="{{ get_url(path='site.js') }}"></script>
 </body>
+{%- else %}
+<body>
+    <script>
+        if (navigator.language || navigator.userLanguage == "de")
+        {
+            window.location.replace("{{get_url(path=section.path, lang=`de`)}}");
+        }
+        else
+        {
+            window.location.replace("{{get_url(path=section.path, lang=`en`)}}");
+        }
+    </script>
+</body>
+{%- endif %}
 
 </html>
