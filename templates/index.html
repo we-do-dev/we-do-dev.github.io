@@ -13,6 +13,12 @@
     <title>{% block title %}{{ config.title ~ " | " ~ section.title}}{% endblock title %}</title>
     {%- endif %}
 
+    {%- if get_env(name="PREVENT_INDEXING", default="OFF")=="ON" %}
+    <meta name="robots" content="noindex, follow">
+    {%- else %}
+    <meta name="robots" content="index, follow">
+    {%- endif %}
+
     {#- All the icons #}
     <link rel="apple-touch-icon" sizes="180x180" href="{{ get_url(path=`/icons/apple-touch-icon.png`) }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ get_url(path=`/icons/favicon-32x32.png`) }}">
