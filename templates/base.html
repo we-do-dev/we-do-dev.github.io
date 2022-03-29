@@ -33,7 +33,7 @@
         </ul>
     </div>
     <script>
-        if (navigator.language || navigator.userLanguage == "de") {
+        if ((navigator.language || navigator.userLanguage) == "de") {
             window.location.replace("{{get_url(path=path, lang=`de`)}}");
         }
         else {
