@@ -1,8 +1,7 @@
 {% import "macros.html" as macros %}
 <!DOCTYPE html>
-<html {%- if lang!="fr" %} lang={{lang}} {%- endif %}>
+<html {%- if lang!=config.default_language %} lang={{lang}} {%- endif %}>
 
-{%- if lang!="fr" %}
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -11,7 +10,7 @@
     viewport-fit=cover is to support iPhone X rounded corners and notch in landscape #}
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
     {%- if lang!="fr" %}
-    <title>{% block title %}{{ config.title }}{% endblock title %}</title>
+    <title>{% block title %}{{ config.title ~ " | " ~ section.title}}{% endblock title %}</title>
     {%- endif %}
 
     {#- All the icons #}
@@ -35,6 +34,7 @@
 </head>
 
 <body>
+    {%- if lang!=config.default_language %}
     {%- block navbar %}
     {{- macros::navbar(extra_items=section.toc) }}
     {%- endblock navbar %}
@@ -91,25 +91,36 @@
     {%- endblock content %}
 
     <script src="{{ get_url(path='site.js') }}"></script>
-</body>
-{%- else %}
-<body>
-    {%- if section %}
-    {%- set path = "@/" ~ section.relative_path %}
     {%- else %}
-    {%- set path = "@/" ~ page.relative_path %}
-    {%- endif %}
+    <div class="container box">
+        Redirecting to your preferred language.<br>
+        Choose manually in case it doesn't work:
+        {%- if section %}
+        {%- set path = "@/" ~ section.relative_path %}
+        {%- else %}
+        {%- set path = "@/" ~ page.relative_path %}
+        {%- endif %}
+        <ul>
+            {%- for lang_sel, _ in config.languages %}
+            {%- if lang_sel != config.default_language %}
+            <li>
+                <a href="{{get_url(path=path, lang=lang_sel)}}">
+                    {{trans(key="name", lang=lang_sel)}}
+                </a>
+            </li>
+            {%- endif %}
+            {%- endfor %}
+        </ul>
+    </div>
     <script>
-        if (navigator.language || navigator.userLanguage == "de")
-        {
+        if (navigator.language || navigator.userLanguage == "de") {
             window.location.replace("{{get_url(path=path, lang=`de`)}}");
         }
-        else
-        {
+        else {
             window.location.replace("{{get_url(path=path, lang=`en`)}}");
         }
     </script>
+    {%- endif %}
 </body>
-{%- endif %}
 
 </html>
