@@ -1,4 +1,4 @@
-{% macro head(title) %}
+{% macro head(title, force_no_index=false) %}
 
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
     <title>{{title}}</title>
 
-    {%- if get_env(name="PREVENT_INDEXING", default="OFF")=="ON" %}
+    {%- if force_no_index or get_env(name="PREVENT_INDEXING", default="OFF")=="ON" %}
     <meta name="robots" content="noindex, follow">
     {%- else %}
     <meta name="robots" content="index, follow">
