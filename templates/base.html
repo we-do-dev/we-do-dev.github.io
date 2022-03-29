@@ -1,5 +1,6 @@
 {% import "macros/navbar.html" as macro_navbar %}
 {% import "macros/head.html" as macro_head %}
+{% import "macros/body_end.html" as macro_body_end %}
 
 {%- if lang==config.default_language -%}
 <!DOCTYPE html>
@@ -9,7 +10,8 @@
     {{macro_head::head(title=config.title)}}
 </head>
 
-<body>
+<body class="has-navbar-fixed-top">
+    {{macro_navbar::navbar(extra_items=[])}}
     <div class="container box">
         Redirecting to your preferred language.<br>
         Choose manually in case it doesn't work:
@@ -38,6 +40,7 @@
             window.location.replace("{{get_url(path=path, lang=`en`)}}");
         }
     </script>
+    {{ macro_body_end::body_end() }}
 </body>
 
 {%- else %}

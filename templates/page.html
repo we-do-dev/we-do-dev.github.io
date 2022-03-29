@@ -13,6 +13,7 @@
 
     {%- block content %}
     {%- endblock content %}
-    <script src="{{ get_url(path='site.js') }}"></script>
+
+    {{- macro_body_end::body_end() }}
 </body>
 {%- endblock body %}

@@ -1,0 +1,12 @@
+{% macro body_end() %}
+<footer class="footer has-text-centered">
+    <div>
+        © {{now() | date(format="%Y")}} Weber Douglas Development
+        <span class="mx-2">|</span>
+        <a href="{{get_url(path='@/imprint.md', lang=lang)}}">
+            {{- trans(key="imprint", lang=lang) -}}
+        </a>
+    </div>
+</footer>
+<script src="{{ get_url(path='site.js') }}"></script>
+{% endmacro body_end %}
