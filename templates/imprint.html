@@ -1,7 +1,7 @@
 {% extends "page.html" %}
 
 {% block navbar %}
-{{- macros::navbar(extra_items=config.extra.imprint_navbar_items) }}
+{{- macros::navbar(extra_items=[config.extra.home_element]) }}
 {% endblock navbar %}
 
 {% block content %}
