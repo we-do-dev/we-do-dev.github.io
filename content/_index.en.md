@@ -4,7 +4,7 @@ title = "Home"
 [extra]
 hero_greeting = "Hello, I am"
 hero_subtitle = "Freelance Software Engineer"
-hero_text = "Good programming is the be-all and end-all for me. This includes careful conception, tests and documentation. "
+hero_text = "I love making good software. This includes careful conceptual design, tests and documentation."
 +++
 
 # Skills
