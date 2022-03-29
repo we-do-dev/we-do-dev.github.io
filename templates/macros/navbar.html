@@ -3,7 +3,7 @@
     <div class="container">
         <div class="navbar-brand">
             <a class="navbar-item" href="{{ get_url(path=`/`, lang=lang) }}">
-                <img src="{{ get_url(path=`wedodev_logo.svg`) }}">
+                <img src="{{ get_url(path=`wedodev_logo.svg`) }}" height="3em" style="max-height: 3rem">
             </a>
             <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
                 <span aria-hidden="true"></span>
@@ -12,7 +12,12 @@
             </a>
         </div>
 
-        <div id="navbarMenu" class="navbar-menu">
+        <div id="navbarMenu" class="navbar-menu has-text-weight-medium">
+            <div class="navbar-start">
+                <a class="navbar-item  is-hidden-touch is-hidden-desktop-only" href="{{ config.base_url | safe}}">
+                    <p class="is-size-3 pt-1">Weber Douglas Development</p>
+                </a>
+            </div>
             <div class="navbar-end">
                 {%- for item in extra_items %}
                 <a class="navbar-item" href="
@@ -22,13 +27,13 @@
                     {{item.permalink | safe}}
                 {%- endif -%}
                 ">
-                    <span>{{ item.title }}</span>
+                    <span class="is-size-5 pt-1">{{ item.title }}</span>
                 </a>
                 {%- endfor %}
                 <div class="navbar-item has-dropdown is-hoverable">
                     <a class="navbar-link icon-text">
-                        <span class="icon is-medium">
-                            <i class="fas fa-language fa-lg"></i>
+                        <span class="icon is-large pt-1">
+                            <i class="fas fa-language fa-2x"></i>
                         </span>
                     </a>
 
