@@ -6,29 +6,31 @@
 
 {% block content %}
 <div class="container imprint">
-    <p class="title mt-4">{{ page.title }}</p>
-    <div class="box">
-        <p class="title is-4">Weber Douglas Development</p>
-        <p>Douglas Weber</p>
-        <p>Blumenstr. 10</p>
-        <p>76337 Waldbronn</p>
-        {% include "shortcodes/phone.html" %}<br>
-        {% include "shortcodes/mail.html" %}<br>
-        {{ page.extra.vat_id }}
-    </div>
+    <section class="section">
+        <p class="title">{{ page.title }}</p>
+        <div class="box">
+            <p class="title is-4">Weber Douglas Development</p>
+            <p>Douglas Weber</p>
+            <p>Blumenstr. 10</p>
+            <p>76337 Waldbronn</p>
+            {% include "shortcodes/phone.html" %}<br>
+            {% include "shortcodes/mail.html" %}<br>
+            {{ page.extra.vat_id }}
+        </div>
 
-    <div class="box">
-        <p class="title is-4">{{ page.extra.insu_label }}</p>
-        <p>HISCOX SA</p>
-        <p>Arnulfstraße 31</p>
-        <p>{{ page.extra.insu_address }}</p>
-        <p>{{ page.extra.insu_policy_terretory }}</p>
-    </div>
+        <div class="box">
+            <p class="title is-4">{{ page.extra.insu_label }}</p>
+            <p>HISCOX SA</p>
+            <p>Arnulfstraße 31</p>
+            <p>{{ page.extra.insu_address }}</p>
+            <p>{{ page.extra.insu_policy_terretory }}</p>
+        </div>
 
-    {%- if page.content %}
-    <div class="content mt-4">
-        {{ page.content | safe }}
-    </div>
-    {% endif %}
+        {%- if page.content %}
+        <div class="content mt-4">
+            {{ page.content | safe }}
+        </div>
+        {% endif %}
+    </section>
 </div>
 {% endblock %}
