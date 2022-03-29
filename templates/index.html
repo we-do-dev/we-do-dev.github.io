@@ -40,6 +40,7 @@
 </head>
 
 <body>
+{%- block body %}
     {%- if lang!=config.default_language %}
     {%- block navbar %}
     {{- macros::navbar(extra_items=section.toc) }}
@@ -97,6 +98,7 @@
     {%- endblock content %}
 
     <script src="{{ get_url(path='site.js') }}"></script>
+
     {%- else %}
     <div class="container box">
         Redirecting to your preferred language.<br>
@@ -127,6 +129,7 @@
         }
     </script>
     {%- endif %}
+{%- endblock body %}
 </body>
 
 </html>

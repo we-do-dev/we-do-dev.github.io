@@ -32,12 +32,13 @@
                         </span>
                     </a>
 
+                    {%- if section %}
+                    {%- set translations = section.translations %}
+                    {%- elif page %}
+                    {%- set translations = page.translations %}
+                    {%- endif %}
+                    {%- if translations %}
                     <div class="navbar-dropdown">
-                        {%- if section %}
-                        {%- set translations = section.translations %}
-                        {%- else %}
-                        {%- set translations = page.translations %}
-                        {%- endif %}
                         {%- for translation in translations %}
                         {%- if translation.lang != config.default_language %}
                         <a class="navbar-item {%- if translation.lang == lang %} has-text-weight-bold {%- endif %}"
@@ -47,6 +48,7 @@
                         {%- endif %}
                         {%- endfor %}
                     </div>
+                    {%- endif %}
                 </div>
             </div>
         </div>
