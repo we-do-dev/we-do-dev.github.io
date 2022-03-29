@@ -19,14 +19,14 @@ highlight_code = false
 title = "we-do.dev"
 
 [languages.en.translations]
-language = "Language"
+name = "English"
 imprint = "Imprint"
 
 [languages.de]
 title = "we-do.dev"
 
 [languages.de.translations]
-language = "Sprache"
+name = "Deutsch"
 imprint = "Impressum"
 
 [extra]

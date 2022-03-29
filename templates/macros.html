@@ -27,9 +27,12 @@
                 </a>
                 {%- endfor %}
                 <div class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-link">
-                        {{- trans(key="language", lang=lang) -}}
+                    <a class="navbar-link icon-text">
+                        <span class="icon">
+                            <i class="fas fa-language"></i>
+                        </span>
                     </a>
+
                     <div class="navbar-dropdown">
                         {%- if section %}
                         {%- set translations = section.translations %}
@@ -37,10 +40,12 @@
                         {%- set translations = page.translations %}
                         {%- endif %}
                         {%- for translation in translations %}
+                        {%- if translation.lang != config.default_language %}
                         <a class="navbar-item {%- if translation.lang == lang %} has-text-weight-bold {%- endif %}"
                             href="{{ translation.permalink | safe }}">
-                            {{- translation.lang -}}
+                            {{- trans(key="name", lang=translation.lang) -}}
                         </a>
+                        {%- endif %}
                         {%- endfor %}
                     </div>
                 </div>
