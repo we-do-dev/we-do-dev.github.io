@@ -1,4 +1,4 @@
-{% import "macros.html" as macros %}
+{% import "macros/navbar.html" as macro_navbar %}
 <!DOCTYPE html>
 <html {%- if lang!=config.default_language %} lang={{lang}} {%- endif %}>
 
@@ -43,7 +43,7 @@
 {%- block body %}
     {%- if lang!=config.default_language %}
     {%- block navbar %}
-    {{- macros::navbar(extra_items=section.toc) }}
+    {{- macro_navbar::navbar(extra_items=section.toc) }}
     {%- endblock navbar %}
 
     {%- block content %}
