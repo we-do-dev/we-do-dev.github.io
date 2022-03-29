@@ -1,12 +1,18 @@
 {% extends "index.html" %}
 
-{%- block title -%}
-{{ config.title ~ " | " ~ page.title }}
-{%- endblock %}
+{%- block head -%}
+{{macro_head::head(title= config.title ~ " | " ~ page.title )}}
+{%- endblock head -%}
 
-{%- block navbar %}
-{{- macros::navbar(extra_items=[]) }}
-{%- endblock navbar %}
+{%- block body -%}
 
-{%- block content %}
-{%- endblock content %}
+<body class="has-navbar-fixed-top">
+    {%- block navbar %}
+    {{- macros::navbar(extra_items=page.toc) }}
+    {%- endblock navbar %}
+
+    {%- block content %}
+    {%- endblock content %}
+    <script src="{{ get_url(path='site.js') }}"></script>
+</body>
+{%- endblock body %}
