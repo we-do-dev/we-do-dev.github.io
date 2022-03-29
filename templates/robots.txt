@@ -1,0 +1,8 @@
+User-agent: *
+{% if get_env(name="PREVENT_INDEXING", default="OFF")=="ON" -%}
+    Disallow
+{%- else -%}
+Allow
+{%- endif -%}
+: /
+Sitemap: {{ get_url(path="sitemap.xml") }}
