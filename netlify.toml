@@ -7,6 +7,7 @@ command = "zola build"
 ZOLA_VERSION = "0.15.3"
 PREVENT_INDEXING = 1
 
+
 [context.production]
 command = "echo 'Skip production'"
 
