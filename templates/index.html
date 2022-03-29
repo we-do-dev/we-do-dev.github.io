@@ -9,7 +9,7 @@
     {#- Enable responsiveness on mobile devices
     viewport-fit=cover is to support iPhone X rounded corners and notch in landscape #}
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
-    {%- if lang!="fr" %}
+    {%- if lang!=config.default_language %}
     <title>{% block title %}{{ config.title ~ " | " ~ section.title}}{% endblock title %}</title>
     {%- endif %}
 
