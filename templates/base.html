@@ -1,0 +1,54 @@
+{% import "macros/navbar.html" as macro_navbar %}
+{% import "macros/head.html" as macro_head %}
+
+{%- if lang==config.default_language -%}
+<!DOCTYPE html>
+<html>
+
+<head>
+    {{macro_head::head(title=config.title)}}
+</head>
+
+<body>
+    <div class="container box">
+        Redirecting to your preferred language.<br>
+        Choose manually in case it doesn't work:
+        {%- if section %}
+        {%- set path = "@/" ~ section.relative_path %}
+        {%- else %}
+        {%- set path = "@/" ~ page.relative_path %}
+        {%- endif %}
+        <ul>
+            {%- for lang_sel, _ in config.languages %}
+            {%- if lang_sel != config.default_language %}
+            <li>
+                <a href="{{get_url(path=path, lang=lang_sel)}}">
+                    {{trans(key="name", lang=lang_sel)}}
+                </a>
+            </li>
+            {%- endif %}
+            {%- endfor %}
+        </ul>
+    </div>
+    <script>
+        if (navigator.language || navigator.userLanguage == "de") {
+            window.location.replace("{{get_url(path=path, lang=`de`)}}");
+        }
+        else {
+            window.location.replace("{{get_url(path=path, lang=`en`)}}");
+        }
+    </script>
+</body>
+
+{%- else %}
+<!DOCTYPE html>
+<html lang={{lang}}>
+
+{%- block head -%}
+{%- endblock head -%}
+
+{%- block body -%}
+{%- endblock body %}
+
+</html>
+{%- endif %}
