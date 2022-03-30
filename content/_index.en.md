@@ -13,22 +13,20 @@ hero_text = "I love making good software. This includes careful conceptual desig
     <div class="tile is-parent">
         <article class="tile is-child notification is-link">
             <p class="title">Technology</p>
-            <ul>
-                <div class="box">C++ and CMake</div>
-                <div class="box">Rust</div>
-                <div class="box">Python</div>
-                <div class="box">
-                    Deep Learning<br>
-                    PyTorch<br>
-                    Tensorflow<br>
-                    Dataset generation and simulation
-                </div>
-                <div class="box">
-                    VCS and CI<br>
-                    Git<br>
-                    Github Actions, Jenkins..
-                </div>
-            </ul>
+            <div class="box">C++ and CMake</div>
+            <div class="box">Rust</div>
+            <div class="box">Python</div>
+            <div class="box">
+                Deep Learning<br>
+                PyTorch<br>
+                Tensorflow<br>
+                Dataset generation and simulation
+            </div>
+            <div class="box">
+                VCS and CI<br>
+                Git<br>
+                Github Actions, Jenkins..
+            </div>
         </article>
     </div>
     <div class="tile is-parent is-vertical">

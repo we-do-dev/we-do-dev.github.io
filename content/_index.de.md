@@ -13,22 +13,20 @@ hero_text = "Gute Programmierung ist für mich das A und O. Dazu zählen sorgfä
     <div class="tile is-parent">
         <article class="tile is-child notification is-link">
             <p class="title">Technologien</p>
-            <ul>
-                <div class="box">C++ and CMake</div>
-                <div class="box">Rust</div>
-                <div class="box">Python</div>
-                <div class="box">
-                    Deep Learning<br>
-                    PyTorch<br>
-                    Tensorflow<br>
-                    Datensätze: Generierung und Simulation
-                </div>
-                <div class="box">
-                    VCS and CI<br>
-                    Git<br>
-                    Github Actions, Jenkins..
-                </div>
-            </ul>
+            <div class="box">C++ and CMake</div>
+            <div class="box">Rust</div>
+            <div class="box">Python</div>
+            <div class="box">
+                Deep Learning<br>
+                PyTorch<br>
+                Tensorflow<br>
+                Datensätze: Generierung und Simulation
+            </div>
+            <div class="box">
+                VCS and CI<br>
+                Git<br>
+                Github Actions, Jenkins..
+            </div>
         </article>
     </div>
     <div class="tile is-parent is-vertical">
