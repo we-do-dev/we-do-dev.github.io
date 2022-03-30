@@ -17,9 +17,6 @@ highlight_code = false
 [languages.fr]
 title = "we-do.dev"
 
-[languages.fr.translations]
-imprint = "Imprint"
-
 [languages.en]
 title = "we-do.dev"
 

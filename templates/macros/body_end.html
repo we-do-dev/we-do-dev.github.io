@@ -3,8 +3,9 @@
     <div>
         © {{now() | date(format="%Y")}} Weber Douglas Development
         <span class="mx-2">|</span>
-        <a href="{{get_url(path='@/imprint.md', lang=lang)}}">
-            {{- trans(key="imprint", lang=lang) -}}
+        {%- set imprint_lang = lang | replace(from=config.default_language, to="en") %}
+        <a href="{{get_url(path='@/imprint.md', lang=imprint_lang)}}">
+            {{- trans(key="imprint", lang=imprint_lang) -}}
         </a>
     </div>
 </footer>
