@@ -2,13 +2,15 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+@import "../bulma-0.9.3/sass/utilities/initial-variables.sass"
 $family-sans-serif: "Roboto", sans-serif;
 $navbar-height: 4rem;
+$link: $blue;
 
 .hero-body
     .gradient
         border-radius: .4em
-        background-image: linear-gradient(to right, hsl(229, 53%, 35%), hsl(229, 53%, 53%))
+        background-image: linear-gradient(to right, darken($link, 18), $link)
 
 .content
     h1
