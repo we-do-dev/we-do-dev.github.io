@@ -46,7 +46,7 @@
                     <div class="navbar-dropdown">
                         {%- for translation in translations %}
                         {%- if translation.lang != config.default_language %}
-                        <a class="navbar-item {%- if translation.lang == lang %} has-text-weight-bold {%- endif %}"
+                        <a class="navbar-item {%- if translation.lang == lang %} has-text-link {%- endif %}"
                             href="{{ translation.permalink | safe }}">
                             {{- trans(key="name", lang=translation.lang) -}}
                         </a>
