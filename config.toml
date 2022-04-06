@@ -34,6 +34,6 @@ imprint = "Impressum"
 phone = "Telefon"
 
 [extra]
-email = "imprint@we-do.dev"
+email = "welcome@we-do.dev"
 phone_disp = "+49 (0) 177 2480821"
 home_element = { path = "/", title = "Home" }
