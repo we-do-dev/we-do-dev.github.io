@@ -31,8 +31,9 @@ hero_text = "I love making good software. This includes careful conceptual desig
     </div>
     <div class="tile is-parent is-vertical">
         <article class="tile is-child notification is-primary">
-            <p class="title">Knowledge</p>
-            <div class="box">Signal processing and communication technology</div>
+            <p class="title">Qualification</p>
+            <div class="box">Team player and open communication</div>
+            <div class="box">Self-dependent way of working</div>
             <div class="box">Clean code: Application of TDD and Software Design Principles</div>
         </article>
         <article class="tile is-child notification is-warning">

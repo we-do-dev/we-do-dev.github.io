@@ -31,8 +31,9 @@ hero_text = "Gute Programmierung ist für mich das A und O. Dazu zählen sorgfä
     </div>
     <div class="tile is-parent is-vertical">
         <article class="tile is-child notification is-primary">
-            <p class="title">Wissen</p>
-            <div class="box">Signalverarbeitung und Nachrichtentechnik</div>
+            <p class="title">Kompetenzen</p>
+            <div class="box">Teamfähig und offene Kommunikation</div>
+            <div class="box">Eigenverantwortliche Arbeitsweise</div>
             <div class="box">Clean code: Anwendung von TDD und Software Design Principles</div>
         </article>
         <article class="tile is-child notification is-warning">
