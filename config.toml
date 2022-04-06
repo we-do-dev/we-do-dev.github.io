@@ -23,6 +23,7 @@ title = "we-do.dev"
 [languages.en.translations]
 name = "English"
 imprint = "Imprint"
+phone = "Phone"
 
 [languages.de]
 title = "we-do.dev"
@@ -30,8 +31,9 @@ title = "we-do.dev"
 [languages.de.translations]
 name = "Deutsch"
 imprint = "Impressum"
+phone = "Telefon"
 
 [extra]
 email = "imprint@we-do.dev"
-phone = "01234"
+phone_disp = "+49 (0) 177 2480821"
 home_element = { path = "/", title = "Home" }

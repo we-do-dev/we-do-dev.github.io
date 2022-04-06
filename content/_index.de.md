@@ -55,7 +55,6 @@ Sie wollen mich für Ihr nächstes Projekt engagieren? Ich freue mich auf eine N
 </div>
 <div class="column is-narrow">
 
-{{ phone() }} \
 {{ mail() }}
 
 </div>

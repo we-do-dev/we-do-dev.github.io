@@ -9,17 +9,25 @@
     <section class="section">
         <p class="title">{{ page.title }}</p>
         <div class="box">
-            <p class="title is-4">Weber Douglas Development</p>
-            <p>Douglas Weber</p>
+            <p class="title is-6">{{ page.extra.l1 }}</p>
+            <p class="has-text-weight-bold">Weber Douglas Development</p>
             <p>Blumenstr. 10</p>
             <p>76337 Waldbronn</p>
-            {% include "shortcodes/phone.html" %}<br>
-            {% include "shortcodes/mail.html" %}<br>
-            {{ page.extra.vat_id }}
+            <p>
+                {{trans(key="phone", lang=lang)}}
+                <span class="icon-text">
+                    <span class="icon">
+                        <i class="fas fa-phone"></i>
+                    </span>
+                    <span>{{config.extra.phone_disp}}</span>
+                </span>
+            </p>
+            E-Mail {% include "shortcodes/mail.html" %}<br>
+            <p><span class="has-text-weight-bold">{{ page.extra.vat_id_h }}:</span> {{ page.extra.vat_id_b }}</p>
         </div>
 
         <div class="box">
-            <p class="title is-4">{{ page.extra.insu_label }}</p>
+            <p class="title is-6">{{ page.extra.insu_label }}</p>
             <p>HISCOX SA</p>
             <p>Arnulfstraße 31</p>
             <p>{{ page.extra.insu_address }}</p>

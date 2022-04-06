@@ -55,7 +55,6 @@ Reach out for me, if you're interested in hiring me for your next project!
 </div>
 <div class="column is-narrow">
 
-{{ phone() }} \
 {{ mail() }}
 
 </div>
