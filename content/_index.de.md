@@ -2,9 +2,9 @@
 title = "Home"
 
 [extra]
-hero_greeting = "Guten Tag, ich bin"
+hero_greeting = "Hallo, ich bin"
 hero_subtitle = "Freiberuflicher Softwareentwickler"
-hero_text = "Gute Programmierung ist für mich das A und O. Dazu zählen sorgfältige Konzeption, Tests, sowie Dokumentation."
+hero_text = "Ich bin leidenschaftlicher Programmierer und freue mich über neue technische Herausforderungen!"
 +++
 
 # Qualifikation
