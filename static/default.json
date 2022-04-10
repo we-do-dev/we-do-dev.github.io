@@ -1,7 +1,6 @@
 {
     "style": {
-        "position": "absolute",
-        "z-index": 31
+        "position": "absolute"
     },
     "background": {
         "opacity": 0
