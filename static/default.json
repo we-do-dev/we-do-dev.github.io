@@ -6,6 +6,7 @@
     "background": {
         "opacity": 0
     },
+    "fps_limit": 30,
     "interactivity": {
         "detectsOn": "canvas",
         "events": {
@@ -33,13 +34,13 @@
         "move": {
             "enable": true,
             "outModes": "out",
-            "speed": 3
+            "speed": 2
         },
         "number": {
             "density": {
                 "enable": true
             },
-            "value": 60
+            "value": 40
         },
         "opacity": {
             "value": 0.5
