@@ -50,5 +50,7 @@
             "random": true
         }
     },
-    "responsive": "canvas"
+    "responsive": {
+        "mode": "canvas"
+    }
 }
