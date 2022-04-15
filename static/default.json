@@ -7,7 +7,7 @@
     },
     "fps_limit": 30,
     "interactivity": {
-        "detectsOn": "window",
+        "detectsOn": "canvas",
         "events": {
             "onClick": {
                 "enable": true,
