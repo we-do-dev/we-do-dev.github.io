@@ -5,6 +5,10 @@
     "background": {
         "opacity": 0
     },
+    "fullScreen": {
+        "enable": true,
+        "zIndex": 1
+    },
     "fps_limit": 30,
     "interactivity": {
         "detectsOn": "canvas",
