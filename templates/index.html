@@ -9,7 +9,8 @@
     {%- endblock navbar %}
 
     {%- block content %}
-    <section id="hero" class="hero is-link is-fullheight is-fullheight-with-navbar">
+    <section class="hero is-link is-fullheight is-fullheight-with-navbar">
+        <div id="tsparticles"></div>
         <div class="hero-body">
             <div class="container">
                 <div class="columns is-gapless">
@@ -48,7 +49,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tsparticles/1.38.0/tsparticles.min.js"></script>
     <script>
         tsParticles
-            .loadJSON("hero", "{{ get_url(path=`default.json`) }}")
+            .loadJSON("tsparticles", "{{ get_url(path=`default.json`) }}")
             .then((container) => {
                 console.log("callback - tsparticles config loaded");
             })
