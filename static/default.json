@@ -1,4 +1,7 @@
 {
+    "style": {
+        "position": "absolute"
+    },
     "background": {
         "opacity": 0
     },
