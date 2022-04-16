@@ -1,24 +1,26 @@
 // From https://bulma.io/documentation/components/navbar/
 document.addEventListener('DOMContentLoaded', () => {
-    // Get all "navbar-burger" elements
-    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+    const navbarBurgers = document.querySelectorAll('.navbar-burger');
+    const navbarItems = document.querySelectorAll(".navbar-item");
 
-    // Check if there are any navbar burgers
-    if ($navbarBurgers.length > 0) {
+    function toggleBurger(burger_el) {
+        // Get the target from the "data-target" attribute
+        const target = burger_el.dataset.target;
+        const $target = document.getElementById(target);
 
-        // Add a click event on each of them
-        $navbarBurgers.forEach(el => {
-            el.addEventListener('click', () => {
+        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+        burger_el.classList.toggle('is-active');
+        $target.classList.toggle('is-active');
+    }
 
-                // Get the target from the "data-target" attribute
-                const target = el.dataset.target;
-                const $target = document.getElementById(target);
-
-                // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-                el.classList.toggle('is-active');
-                $target.classList.toggle('is-active');
-
+    navbarBurgers.forEach(burger_el => {
+        burger_el.addEventListener('click', () => {
+            toggleBurger(burger_el)
+        });
+        navbarItems.forEach(item => {
+            item.addEventListener("click", () => {
+                toggleBurger(burger_el)
             });
         });
-    }
+    });
 });
