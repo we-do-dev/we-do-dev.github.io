@@ -13,12 +13,10 @@ $navbar-height: 4rem
     left: 0
     width: 100%
     height: 100%
-    z-index: 1 // In front of invisible <coulums> to allow interacivity
+    z-index: 1
 
 .hero-body
     .gradient
-        z-index: 2 // In front of particles
-        position: relative // To keep z-index working also on mobile (would get static)
         border-radius: .4em
         background-image: linear-gradient(to right, transparentize(black, .7), hsla(0, 0%, 0%, 0))
 
