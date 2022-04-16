@@ -2,12 +2,38 @@
 base_url = "https://we-do.dev"
 
 # Whether to automatically compile all Sass files in the sass directory
-compile_sass = false
+compile_sass = true
 
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = false
+
+default_language = "fr"
 
 [markdown]
 # Whether to do syntax highlighting
 # Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
 highlight_code = false
+
+[languages.fr]
+title = "we-do.dev"
+
+[languages.en]
+title = "we-do.dev"
+
+[languages.en.translations]
+name = "English"
+imprint = "Imprint"
+phone = "Phone"
+
+[languages.de]
+title = "we-do.dev"
+
+[languages.de.translations]
+name = "Deutsch"
+imprint = "Impressum"
+phone = "Telefon"
+
+[extra]
+email = "welcome@we-do.dev"
+phone_disp = "+49 (0) 177 2480821"
+home_element = { path = "/", title = "Home" }

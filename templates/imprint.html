@@ -1,0 +1,51 @@
+{% extends "page.html" %}
+
+{% block navbar %}
+{{- macro_navbar::navbar(extra_items=[config.extra.home_element]) }}
+{% endblock navbar %}
+
+{% block content %}
+<div class="container imprint">
+    <section class="section">
+        <p class="title">{{ page.title }}</p>
+        <div class="box">
+            <p class="title is-6">{{ page.extra.l1 }}</p>
+            <p class="has-text-weight-bold">Weber Douglas Development</p>
+            <p>Blumenstr. 10</p>
+            <p>76337 Waldbronn</p>
+            <p>
+                {{trans(key="phone", lang=lang)}}
+                <span class="icon-text">
+                    <span class="icon">
+                        <i class="fas fa-phone"></i>
+                    </span>
+                    <span>{{config.extra.phone_disp}}</span>
+                </span>
+            </p>
+            <p>
+                <span class="icon-text">
+                    <span class="icon">
+                        <i class="fas fa-envelope"></i>
+                    </span>
+                    <span><a href="mailto:imprint@we-do.dev">imprint@we-do.dev</a></span>
+                </span>
+            </p>
+            <p><span class="has-text-weight-bold">{{ page.extra.vat_id_h }}:</span> {{ page.extra.vat_id_b }}</p>
+        </div>
+
+        <div class="box">
+            <p class="title is-6">{{ page.extra.insu_label }}</p>
+            <p>HISCOX SA</p>
+            <p>Arnulfstraße 31</p>
+            <p>{{ page.extra.insu_address }}</p>
+            <p>{{ page.extra.insu_policy_terretory }}</p>
+        </div>
+
+        {%- if page.content %}
+        <div class="content mt-4">
+            {{ page.content | safe }}
+        </div>
+        {% endif %}
+    </section>
+</div>
+{% endblock %}

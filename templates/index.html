@@ -1,16 +1,62 @@
-<!DOCTYPE html>
-<html lang={{lang}}>
+{% extends "section.html" %}
 
-<head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
-    {#- Enable responsiveness on mobile devices
-    viewport-fit=cover is to support iPhone X rounded corners and notch in landscape #}
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
-</head>
+{%- block body -%}
 
-<body class="has-navbar-fixed-top">
+<body>
+    {%- block navbar %}
+    {{- macro_navbar::navbar(extra_items=section.toc) }}
+    {%- endblock navbar %}
+
+    {%- block content %}
+    <section class="hero is-link is-fullheight is-fullheight-with-navbar">
+        <div class="hero-body">
+            <div id="tsparticles"></div>
+            <div class="container">
+                <div class="columns is-gapless">
+                    <div class="columns is-5 is-vcentered gradient">
+                        <div class="column">
+                            {{- section.extra.hero_greeting -}}
+                            <p class="title">Douglas Weber</p>
+                            <p class="subtitle">
+                                {{-section.extra.hero_subtitle-}}
+                            </p>
+                            <p style="max-width:22em">
+                                {{-section.extra.hero_text-}}
+                            </p>
+                        </div>
+                        <div class="column is-narrow">
+                            <figure class="image is-inline-block">
+                                {% set size = 200 %}
+                                {% set image = resize_image(path="portrait_square.jpg", width=size, height=size) %}
+                                <img style="border-radius: 50%" src={{ image.url | safe }} alt="portrait">
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <section class="section content">
+            {{ section.content | safe }}
+        </section>
+    </div>
+
+    {%- endblock content %}
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tsparticles/1.43.0/tsparticles.min.js"></script>
+    <script>
+        tsParticles
+            .loadJSON("tsparticles", "{{ get_url(path=`default.json`) }}")
+            .then((container) => {
+                console.log("callback - tsparticles config loaded");
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    </script>
+    {{ macro_body_end::body_end() }}
 </body>
-
-</html>
+{%- endblock body %}

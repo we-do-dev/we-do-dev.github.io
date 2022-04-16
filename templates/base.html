@@ -1,0 +1,55 @@
+{% import "macros/navbar.html" as macro_navbar %}
+{% import "macros/head.html" as macro_head %}
+{% import "macros/body_end.html" as macro_body_end %}
+
+{%- if lang==config.default_language -%}
+<!DOCTYPE html>
+<html lang="en">
+
+{{macro_head::head(title=config.title)}}
+
+<body class="has-navbar-fixed-top">
+    {{macro_navbar::navbar(extra_items=[])}}
+    <div class="container box">
+        Redirecting to your preferred language.<br>
+        Choose manually in case it doesn't work:
+        {%- if section %}
+        {%- set path = "@/" ~ section.relative_path %}
+        {%- else %}
+        {%- set path = "@/" ~ page.relative_path %}
+        {%- endif %}
+        <ul>
+            {%- for lang_sel, _ in config.languages %}
+            {%- if lang_sel != config.default_language %}
+            <li>
+                <a href="{{get_url(path=path, lang=lang_sel)}}">
+                    {{trans(key="name", lang=lang_sel)}}
+                </a>
+            </li>
+            {%- endif %}
+            {%- endfor %}
+        </ul>
+    </div>
+    <script>
+        if (/^de\b/.test(navigator.language || navigator.userLanguage)) {
+            window.location.replace("{{get_url(path=path, lang=`de`)}}");
+        }
+        else {
+            window.location.replace("{{get_url(path=path, lang=`en`)}}");
+        }
+    </script>
+    {{ macro_body_end::body_end() }}
+</body>
+
+{%- else %}
+<!DOCTYPE html>
+<html lang="{{lang}}">
+
+{%- block head -%}
+{%- endblock head -%}
+
+{%- block body -%}
+{%- endblock body %}
+
+</html>
+{%- endif %}

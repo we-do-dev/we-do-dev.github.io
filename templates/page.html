@@ -1,0 +1,19 @@
+{% extends "index.html" %}
+
+{%- block head -%}
+{{macro_head::head(title= config.title ~ " | " ~ page.title )}}
+{%- endblock head -%}
+
+{%- block body -%}
+
+<body class="has-navbar-fixed-top">
+    {%- block navbar %}
+    {{- macros::navbar(extra_items=page.toc) }}
+    {%- endblock navbar %}
+
+    {%- block content %}
+    {%- endblock content %}
+
+    {{- macro_body_end::body_end() }}
+</body>
+{%- endblock body %}

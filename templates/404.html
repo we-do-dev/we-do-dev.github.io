@@ -1,0 +1,21 @@
+{% import "macros/navbar.html" as macro_navbar %}
+{% import "macros/head.html" as macro_head %}
+{% import "macros/body_end.html" as macro_body_end %}
+<!DOCTYPE html>
+<html lang="en">
+
+{{macro_head::head(title=config.title ~ " | Not found", force_no_index=true)}}
+
+<body class="has-navbar-fixed-top">
+    {{- macro_navbar::navbar(extra_items=[config.extra.home_element]) }}
+
+    <section class="container section">
+        <p class="title">404: Page not found</p>
+        <p class="subtitle">Sorry, we've misplaced that URL or it's pointing to something that doesn't exist. <a href={{
+                config.base_url }}>Head back home</a> to try finding it again.</p>
+    </section>
+
+    {{- macro_body_end::body_end() }}
+</body>
+
+</html>
