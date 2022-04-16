@@ -10,8 +10,8 @@
 
     {%- block content %}
     <section class="hero is-link is-fullheight is-fullheight-with-navbar">
-        <div id="tsparticles"></div>
         <div class="hero-body">
+            <div id="tsparticles"></div>
             <div class="container">
                 <div class="columns is-gapless">
                     <div class="columns is-5 is-vcentered gradient" style="z-index: 2">
@@ -46,7 +46,7 @@
 
     {%- endblock content %}
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tsparticles/1.38.0/tsparticles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tsparticles/1.43.0/tsparticles.min.js"></script>
     <script>
         tsParticles
             .loadJSON("tsparticles", "{{ get_url(path=`default.json`) }}")
