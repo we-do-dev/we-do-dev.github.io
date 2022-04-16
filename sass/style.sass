@@ -16,8 +16,9 @@ $navbar-height: 4rem
     z-index: 1 // In front of invisible <coulums> to allow interacivity
 
 .hero-body
-    position: relative // On mobile: Fix particles issue (gets cropped) and keep z-index
+    position: relative // On mobile: Fix particles issue (gets cropped)
     .gradient
+        position: relative // On mobile: keep z-index
         z-index: 2 // In front of particles
         border-radius: .4em
         background-image: linear-gradient(to right, transparentize(black, .7), hsla(0, 0%, 0%, 0))
