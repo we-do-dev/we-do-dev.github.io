@@ -3,8 +3,7 @@
         "opacity": 0
     },
     "fullScreen": {
-        "enable": false,
-        "zIndex": 1
+        "enable": false
     },
     "fps_limit": 30,
     "interactivity": {
