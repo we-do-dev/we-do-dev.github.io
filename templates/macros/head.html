@@ -1,4 +1,4 @@
-{% macro head(title, force_no_index=false) %}
+{%- macro head(title, force_no_index=false) -%}
 
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +7,7 @@
     {#- Enable responsiveness on mobile devices
     viewport-fit=cover is to support iPhone X rounded corners and notch in landscape #}
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
-    <title>{{title}}</title>
+    <title>{{ title }}</title>
 
     {%- if force_no_index or get_env(name="PREVENT_INDEXING", default="OFF")=="ON" %}
     <meta name="robots" content="noindex, follow">
@@ -35,4 +35,4 @@
     <script defer data-domain={{ config.base_url | trim_start_matches(pat="http" ) | trim_start_matches(pat="s" ) |
         trim_start_matches(pat="://" ) }} src="https://plausible.io/js/plausible.js"></script>
 </head>
-{% endmacro head %}
+{%- endmacro head -%}
