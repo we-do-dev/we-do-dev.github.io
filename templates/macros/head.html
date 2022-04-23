@@ -1,4 +1,4 @@
-{% macro head(title, force_no_index=false) %}
+{%- macro head(title, force_no_index=false) -%}
 
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +7,7 @@
     {#- Enable responsiveness on mobile devices
     viewport-fit=cover is to support iPhone X rounded corners and notch in landscape #}
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
-    <title>{{title}}</title>
+    <title>{{ title }}</title>
 
     {%- if force_no_index or get_env(name="PREVENT_INDEXING", default="OFF")=="ON" %}
     <meta name="robots" content="noindex, follow">
@@ -31,4 +31,4 @@
         integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ get_url(path=`style.css`) }}">
 </head>
-{% endmacro head %}
+{%- endmacro head -%}
