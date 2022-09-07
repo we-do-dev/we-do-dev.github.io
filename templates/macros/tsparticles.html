@@ -1,0 +1,65 @@
+{%- macro script() -%}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tsparticles/1.43.0/tsparticles.min.js"></script>
+<script>
+  tsParticles
+    .load("tsparticles", {
+      background: {
+        opacity: 0,
+      },
+      fullScreen: {
+        enable: false,
+      },
+      fps_limit: 30,
+      interactivity: {
+        detectsOn: "canvas",
+        events: {
+          onClick: {
+            enable: true,
+            mode: "push",
+          },
+          onHover: {
+            enable: true,
+            mode: "connect",
+          },
+        },
+      },
+      particles: {
+        color: {
+          value: "#ffffff",
+        },
+        links: {
+          color: {
+            value: "#ffffff",
+          },
+          enable: true,
+          opacity: 0.4,
+        },
+        move: {
+          enable: true,
+          outModes: "out",
+          speed: 1.5,
+        },
+        number: {
+          density: {
+            enable: true,
+          },
+          value: 40,
+        },
+        opacity: {
+          value: 0.5,
+        },
+        size: {
+          value: 3,
+          random: true,
+        },
+      },
+      detectRetina: true,
+    })
+    .then((container) => {
+      console.log("callback - tsparticles config loaded");
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+</script>
+{%- endmacro script -%}
