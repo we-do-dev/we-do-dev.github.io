@@ -9,5 +9,5 @@ vat_id_h = "USt-IdNr."
 vat_id_b = "DE351115599"
 insu_label = "Berufshaftpflichtversicherung"
 insu_address = "D-80636 München"
-insu_policy_terretory = "Geltungsbereich: Weltweit"
+insu_policy_territory = "Geltungsbereich: Weltweit"
 +++
