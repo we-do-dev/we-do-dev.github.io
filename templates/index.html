@@ -1,5 +1,7 @@
 {% extends "section.html" %}
 
+{% import "macros/tsparticles.html" as macro_tsparticles %}
+
 
 {%- block body -%}
 
@@ -46,17 +48,8 @@
 
     {%- endblock content %}
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tsparticles/1.43.0/tsparticles.min.js"></script>
-    <script>
-        tsParticles
-            .loadJSON("tsparticles", "{{ get_url(path=`default.json`) }}")
-            .then((container) => {
-                console.log("callback - tsparticles config loaded");
-            })
-            .catch((error) => {
-                console.error(error);
-            });
-    </script>
-    {{ macro_body_end::body_end() }}
+{{ macro_tsparticles::script() }}
+
+{{ macro_body_end::body_end() }}
 </body>
 {%- endblock body %}
