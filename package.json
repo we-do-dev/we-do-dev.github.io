@@ -1,5 +1,9 @@
 {
+  "scripts": {
+    "postinstall": "mkdir -p static/modules && cp node_modules/tsparticles/tsparticles.bundle.min.js static/modules"
+  },
   "dependencies": {
-    "bulma": "^0.9.4"
+    "bulma": "^0.9.4",
+    "tsparticles": "^2.4.0"
   }
 }

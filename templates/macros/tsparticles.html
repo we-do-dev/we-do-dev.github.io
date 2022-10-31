@@ -1,5 +1,6 @@
 {%- macro script() -%}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tsparticles/1.43.0/tsparticles.min.js"></script>
+<script src="{{ get_url(path='modules/tsparticles.bundle.min.js') }}"></script>
+
 <script>
   tsParticles
     .load("tsparticles", {
