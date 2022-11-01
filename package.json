@@ -1,8 +1,9 @@
 {
   "scripts": {
-    "postinstall": "mkdir -p static/modules && cp node_modules/tsparticles/tsparticles.bundle.min.js static/modules"
+    "postinstall": "T=static/modules && mkdir -p $T && cp -r node_modules/tsparticles/tsparticles.bundle.min.js node_modules/@fortawesome/fontawesome-free/webfonts $T"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
     "bulma": "^0.9.4",
     "tsparticles": "^2.4.0"
   }
