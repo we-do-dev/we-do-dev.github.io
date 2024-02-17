@@ -26,7 +26,7 @@ Gemäß den gesetzlichen Bestimmungen der DSGVO haben Sie als betroffene Person 
 
 Bei jedem Zugriff eines Nutzers auf eine Seite aus dem Angebot von {{ config(key="extra.company.name") }} und bei jedem Abruf einer Datei werden Zugriffsdaten über diesen Vorgang übertragen. Diese Zugriffsdaten umfassen:
 
-- verwendeten Browsertypen und Versionen
+- den verwendeten Browsertyp und Version
 - das vom zugreifenden System verwendete Betriebssystem
 - die Internetseite, von welcher ein zugreifendes System auf unsere Internetseite gelangt (sogenannte Referrer)
 - das Datum und die Uhrzeit eines Zugriffs auf die Internetseite
