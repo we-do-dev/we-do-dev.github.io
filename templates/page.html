@@ -1,3 +1,6 @@
+{% import "macros/head.html" as macro_head %}
+{% import "macros/navbar.html" as macros %}
+
 {% extends "index.html" %}
 
 {%- block head -%}
@@ -12,6 +15,9 @@
     {%- endblock navbar %}
 
     {%- block content %}
+        <section class="section container content">
+            {{ page.content | safe }}
+        </section>
     {%- endblock content %}
 
     {{- macro_body_end::body_end() }}

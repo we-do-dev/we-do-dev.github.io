@@ -1,0 +1,8 @@
+{% set c = config.extra.company -%}
+
+<p>
+  {{c.name}}<br />
+  {{c.address_l1}}<br />
+  {{c.address_l2}}<br />
+  <a href="mailto:{{c.email_privacy}}">{{c.email_privacy}}</a>
+</p>

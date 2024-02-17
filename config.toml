@@ -23,6 +23,7 @@ title = "Weber Douglas Development"
 [languages.en.translations]
 name = "English"
 imprint = "Imprint"
+privacy-policy = "Privacy Policy"
 phone = "Phone"
 
 [languages.de]
@@ -31,9 +32,17 @@ title = "Weber Douglas Development"
 [languages.de.translations]
 name = "Deutsch"
 imprint = "Impressum"
+privacy-policy = "Datenschutzerklärung"
 phone = "Telefon"
 
 [extra]
 email = "welcome@we-do.dev"
 phone_disp = "+49 (0) 177 2480821"
 home_element = { path = "/", title = "Home" }
+
+[extra.company]
+name = "Weber Douglas Development"
+address_l1 = "Durlacher Str. 23"
+address_l2 = "76275 Ettlingen"
+email_privacy = "privacy@we-do.dev"
+phone_disp = "+49 (0) 177 2480821"
