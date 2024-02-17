@@ -11,7 +11,7 @@
 
 <body class="has-navbar-fixed-top">
     {%- block navbar %}
-    {{- macros::navbar(extra_items=page.toc) }}
+    {{- macros::navbar(extra_items=[config.extra.home_element]) }}
     {%- endblock navbar %}
 
     {%- block content %}
